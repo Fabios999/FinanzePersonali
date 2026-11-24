@@ -1,0 +1,24 @@
+FINANZE PERSONALI — installazione (usa un account Google PERSONALE)
+
+A) DATABASE + API (Google Apps Script)
+1. Crea un Google Sheet vuoto > Estensioni > Apps Script.
+2. Incolla Code.gs. Crea il file HTML "Index" e incolla app/index.html
+   (serve solo se vuoi usare anche l'interfaccia servita da Google).
+3. Esegui "setup" e autorizza. Nel Log di esecuzione copia il TOKEN API.
+   (Lo ritrovi in Impostazioni progetto > Proprietà script > API_TOKEN.)
+4. Facoltativo: esegui "installaTrigger" (quotazioni giornaliere + backup settimanale).
+5. Esegui il deployment > Nuovo deployment > App web
+   Esegui come: Me — Chi ha accesso: Chiunque. Copia l'URL che termina con /exec.
+   Se aggiorni il codice: Gestisci deployment > Modifica > Nuova versione (l'URL resta lo stesso).
+
+B) APP (un solo URL, funziona su qualsiasi browser e dispositivo)
+1. Crea un account su github.com > New repository (pubblico; contiene solo codice, nessun dato).
+2. "Add file > Upload files": carica TUTTO il contenuto della cartella app/.
+3. Settings > Pages > Branch: main / root > Save. Dopo 1-2 minuti l'app è su
+   https://<tuo-utente>.github.io/<nome-repo>/
+4. Aprila, incolla URL /exec + token > Collega.
+5. Telefono: Impostazioni > Collega un altro dispositivo > inquadra il QR,
+   poi "Aggiungi a schermata Home".
+
+Per cambiare il token: elimina API_TOKEN dalle Proprietà script ed esegui di nuovo setup;
+poi ricollega i dispositivi.
